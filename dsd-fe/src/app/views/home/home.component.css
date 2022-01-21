@@ -1,0 +1,12 @@
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+.spacer-toolbar-home {
+  flex: 1 1 auto;
+}
+
+.logo{
+  padding-top: 10px;
+}

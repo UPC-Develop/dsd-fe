@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+    <a  routerLink="miscellany" class="logo">
+        <img src="/assets/img/app/logo.png" alt="" width="55" height="55">
+    </a>
+    <button mat-button routerLink="miscellany">INICIO</button>
+
+    <span class="spacer-toolbar-home"></span>
+
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="">
+        <mat-icon>account_circle</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="login">
+            <mat-icon>lock</mat-icon>
+            <span>Iniciar sesión</span>
+        </button>
+        <button mat-menu-item routerLink="user-register">
+            <mat-icon>emoji_emotions</mat-icon>
+            <span>Registrarse</span>
+        </button>
+        <button mat-menu-item>
+            <mat-icon>vpn_key</mat-icon>
+            <span>Olvide mi contraseña</span>
+        </button>
+    </mat-menu>
+</mat-toolbar>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

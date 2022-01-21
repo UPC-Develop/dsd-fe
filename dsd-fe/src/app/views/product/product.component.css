@@ -1,0 +1,25 @@
+.product-text-container{
+    background-color: #fafafa;
+    margin: 1rem;
+    padding: 1rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.product-card-content{
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.product-card{
+    max-width: 250px;
+    margin: 1rem;
+  }
+  
+ .product-button-spacer{
+  float: right;
+  margin-right: 0.5rem;
+}
+
+ 

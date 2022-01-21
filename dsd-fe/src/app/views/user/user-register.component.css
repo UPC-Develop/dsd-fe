@@ -1,0 +1,56 @@
+  a {
+    text-decoration: none;
+  }
+  
+  .card-user-register {
+    font-family: sans-serif;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3em;
+    margin-bottom:3em;
+    border-radius: 10px;
+    background-color: #ffff;
+    padding: 1.8rem;
+    box-shadow: 2px 5px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .title-user-register {
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+  }
+  .button-text-user-register {
+    margin: 0;
+  }
+  .or {
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 2px solid rgb(245 239 239);
+    line-height: 0.1em;
+    margin: 25px 0;
+  }
+  .or span {
+    background: #fff;
+    padding: 0 10px;
+  }
+  
+  .text-user-register {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  .button-user-register {
+    color: white;
+    padding: 5px 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  .have-account-user-register {
+    text-align: center;
+    display: block;
+  }
+  
