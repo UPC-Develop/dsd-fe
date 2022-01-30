@@ -1,19 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from '../views/login/login.component';
+import { UserLoginComponent } from '../views/user/login/user-login.component';
 import { HomeComponent } from '../views/home/home.component';
 import { MiscellanyComponent } from '../views/miscellany/miscellany.component';
-import { UserRegisterComponent } from '../views/user/user-register.component';
+import { UserRegisterComponent } from '../views/user/register/user-register.component';
 import { ProductComponent } from '../views/product/product.component';
 import { CampusComponent } from '../views/campus/campus.component';
+import { UserHomeComponent } from '../views/user/home/user-home.component';
 const routes: Routes = [
   {
     path: 'home', component: HomeComponent, children:
       [{ path: 'miscellany', component: MiscellanyComponent },
-      { path: 'login', component: LoginComponent },
+      { path: 'user-login', component: UserLoginComponent },
       { path: 'user-register', component: UserRegisterComponent },
       { path: 'campus', component:CampusComponent },
-      { path: 'product', component: ProductComponent }]
+      { path: 'product', component: ProductComponent },
+      { path: 'user-home', component: UserHomeComponent }
+    ]
   },
   { path: '', redirectTo: 'home/miscellany', pathMatch: 'full' },
   { path: '**', redirectTo: 'home/miscellany', pathMatch: 'full' }

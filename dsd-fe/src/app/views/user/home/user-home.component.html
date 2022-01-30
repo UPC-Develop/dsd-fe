@@ -1,0 +1,65 @@
+<div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center center" class="user-home-button" >
+    <button mat-raised-button color="primary" (click)="ngNextForm()" >Nueva Reserva</button>
+</div>
+
+
+<div class="user-home-text-container">
+    Historial de Reservas
+</div>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8" align="center" >
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="bookingId">
+        <th mat-header-cell *matHeaderCellDef class="user-home-colum-table-center" > Id </th>
+        <td mat-cell *matCellDef="let element" class="user-home-colum-table-center"> {{element.bookingId}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="productName">
+        <th mat-header-cell *matHeaderCellDef class="user-home-colum-table-center"> Nombre de producto </th>
+        <td mat-cell *matCellDef="let element"> {{element.productName}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="starDdate">
+        <th mat-header-cell *matHeaderCellDef class="user-home-colum-table-center"> F. Inicio </th>
+        <td mat-cell *matCellDef="let element" class="user-home-colum-table-center"> {{element.starDdate}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="endDdate">
+        <th mat-header-cell *matHeaderCellDef class="user-home-colum-table-center"> F. Fin </th>
+        <td mat-cell *matCellDef="let element" class="user-home-colum-table-center"> {{element.endDdate}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="quantity">
+        <th mat-header-cell *matHeaderCellDef class="user-home-colum-table-center"> Cantidad </th>
+        <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="unitMeasurement">
+        <th mat-header-cell *matHeaderCellDef class="user-home-colum-table-center"> U. Medida </th>
+        <td mat-cell *matCellDef="let element" class="user-home-colum-table-center"> {{element.unitMeasurement}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="currencySymbol">
+        <th mat-header-cell *matHeaderCellDef class="user-home-colum-table-center"> Moneda </th>
+        <td mat-cell *matCellDef="let element" class="user-home-colum-table-center"> {{element.currencySymbol}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="amount">
+        <th mat-header-cell *matHeaderCellDef class="user-home-colum-table-center"> Monto </th>
+        <td mat-cell *matCellDef="let element" class="user-home-colum-table-center"> {{element.amount}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

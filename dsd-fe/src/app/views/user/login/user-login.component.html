@@ -1,6 +1,5 @@
-
 <div class="card-login">
-   <form>
+   <form method="post">
       <h2 class="title-login"> Iniciar Sesión</h2>
       <p class="subtitle-login">¿No tienes una cuenta? <a href="#">Registrate</a></p>
 
@@ -11,18 +10,16 @@
             <p class="button-text-login">Iniciar sesión con Google</p>
          </button>
       </div>
-
       <p class="or"><span>ó</span></p>
-
       <mat-form-field class="email-login" appearance="fill">
          <mat-label>Correo electrónico</mat-label>
-         <input type="email" matInput placeholder="usuario@email.com" value="">
+         <input type="email" matInput placeholder="usuario@email.com" value="" name="userName" [(ngModel)]="userName">
       </mat-form-field>
       <mat-form-field class="password-login" appearance="fill">
          <mat-label>Contraseña</mat-label>
-         <input type="password" matInput value="">
+         <input type="password" matInput value="" name="password" [(ngModel)]="password">
       </mat-form-field>
-      <button mat-raised-button color="primary" class="button-login" routerLink="product">Iniciar sesión</button>
+      <button mat-raised-button color="primary" class="button-login" (click)="ngUserLogin()">Iniciar sesión</button>
       <a class="forget-password-login" routerLink="product">¿Olvide mi contraseña?</a>
-    </form>
+   </form>
 </div>

@@ -1,0 +1,16 @@
+table {
+  width: 70%;
+}
+.user-home-text-container{
+  background-color: #fafafa;
+  margin: 1rem;
+  padding: 1rem;
+  text-align: center;
+  font-size: 2rem;
+}
+.user-home-colum-table-center {
+  text-align: center
+}
+.user-home-button{
+padding-top: 30px;
+}

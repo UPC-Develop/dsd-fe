@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Subscribable, Subscriber, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -7,8 +8,11 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  isLoggedIn:boolean = false;
+  subscription!: Subscription;
+
   ngOnInit() {
-    
+   
   }
 
 }
