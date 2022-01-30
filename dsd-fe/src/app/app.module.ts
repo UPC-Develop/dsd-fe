@@ -12,6 +12,7 @@ import { FooterComponent } from './views/footer/footer.component';
 import { UserRegisterComponent } from './views/user/user-register.component';
 import { ProductComponent } from './views/product/product.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { CampusComponent } from './views/campus/campus.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     FooterComponent,
     LoginComponent,
     UserRegisterComponent,
+    CampusComponent,
     ProductComponent
   ],
   imports: [
