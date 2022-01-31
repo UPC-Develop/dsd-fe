@@ -1,0 +1,20 @@
+<div class="booking-text-container">
+    Reserva tu canchita
+</div>
+
+<div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center center">
+<mat-card class="booking-calendar-card-container">
+    <mat-calendar  [(selected)]="selected" (selectedChange)="openDialog()" ></mat-calendar>
+</mat-card>
+
+</div>
+
+<!-- <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center center">
+    <p>Selected date: {{selected}}</p>
+</div>-->
+
+<div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center center">
+    <mat-card-actions class="campus-next-button">
+        <button mat-raised-button color="primary" (click)="ngNextForm()">CONTRATAR</button>
+      </mat-card-actions>
+</div>

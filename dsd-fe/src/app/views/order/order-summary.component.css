@@ -1,0 +1,40 @@
+.order-summary-text-container{
+    background-color: #fafafa;
+    margin: 1rem;
+    padding: 1rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.order-summary-text-card-content{
+  text-align: center;
+  font-size: 16px;
+
+}
+
+.order-summary-text-card{
+    max-width: 250px;
+    margin: 1rem;
+  }
+  
+ .order-summary-text-button-spacer{
+  float: right;
+  margin-right: 0.5rem;
+}
+.order-summary-text-card-product{
+    font-size: 14px;
+}
+.order-summary-button-content{
+    text-align: center;
+}
+.order-summary-button{
+    width: 60%;
+}
+.order-summary-text-card-product-total{
+    font-weight: bold;
+    font-size: 20px;
+    color: red;
+}
+
+
+ 

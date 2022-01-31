@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -7,8 +8,16 @@ import { Component } from '@angular/core';
 })
 export class ProductComponent {
 
+  constructor(public router: Router) {
+
+  }
+
   ngOnInit() {
     
+  }
+
+  ngNextForm(){
+    this.router.navigate(['home/booking']);
   }
 
 }

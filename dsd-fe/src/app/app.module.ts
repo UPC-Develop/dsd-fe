@@ -14,7 +14,12 @@ import { ProductComponent } from './views/product/product.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CampusComponent } from './views/campus/campus.component';
 import { UserHomeComponent } from './views/user/home/user-home.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BookingComponent } from './views/booking/booking.component';
+import { OrderSummaryComponent } from './views/order/order-summary.component';
+import { MatNativeDateModule } from '@angular/material/core';
+import { BookingDetailComponent } from './views/booking/booking-detail/booking-detail.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,10 @@ import { FormsModule } from '@angular/forms';
     UserRegisterComponent,
     CampusComponent,
     ProductComponent,
-    UserHomeComponent
+    UserHomeComponent,
+    BookingComponent,
+    OrderSummaryComponent,
+    BookingDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +42,10 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     CustomMaterialModule,
     FlexLayoutModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    MatNativeDateModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

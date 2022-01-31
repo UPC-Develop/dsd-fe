@@ -7,6 +7,8 @@ import { UserRegisterComponent } from '../views/user/register/user-register.comp
 import { ProductComponent } from '../views/product/product.component';
 import { CampusComponent } from '../views/campus/campus.component';
 import { UserHomeComponent } from '../views/user/home/user-home.component';
+import { BookingComponent } from '../views/booking/booking.component';
+import { OrderSummaryComponent } from '../views/order/order-summary.component';
 const routes: Routes = [
   {
     path: 'home', component: HomeComponent, children:
@@ -15,6 +17,8 @@ const routes: Routes = [
       { path: 'user-register', component: UserRegisterComponent },
       { path: 'campus', component:CampusComponent },
       { path: 'product', component: ProductComponent },
+      { path: 'booking', component: BookingComponent },
+      { path: 'order-summary', component: OrderSummaryComponent },
       { path: 'user-home', component: UserHomeComponent }
     ]
   },
