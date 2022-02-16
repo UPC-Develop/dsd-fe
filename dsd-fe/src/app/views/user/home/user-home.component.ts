@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Boocking } from 'src/app/model/booking';
+import { Order } from 'src/app/model/order';
+import { OrderService } from 'src/app/service/order.service';
 
 @Component({
   selector: 'app-user-home',
@@ -9,17 +12,25 @@ import { Boocking } from 'src/app/model/booking';
 })
 export class UserHomeComponent {
 
-  constructor(public router: Router) {
-
+  constructor(public router: Router, private orderService:  OrderService){
   }
 
-  boocking: Boocking[] = [{bookingId: "A00001", productName: "Grass", starDdate: "30/10/2022", endDdate: "30/10/2022", quantity: 2, unitMeasurement: "h", currencySymbol: "S/.", amount: 60.50},
-  {bookingId: "A00002", productName: "Loza", starDdate: "30/10/2022", endDdate: "30/10/2022", quantity: 2, unitMeasurement: "h", currencySymbol: "S/.", amount: 60.50}];
+  orders: Order[] = []; 
+  customer_id: number = 1;
+  dataSource: any;
 
-  displayedColumns: string[] = ['bookingId', 'productName', 'starDdate', 'endDdate', "quantity", "unitMeasurement", "currencySymbol", "amount"];
-  dataSource = this.boocking;
+  displayedColumns: string[] = ['code', 'campus_description', 'product_category_description', 'product_description', 
+  "order_date", "booking_date", "quantity","price", "sub_total", "discount","total_tax",
+"total", "currency_type","start_hour", "end_hour"];
+  
     
-  ngOnInit() {
+  ngOnInit(){
+
+    this.orderService.getHistoryOrders(this.customer_id, 1).subscribe((rest: any) => {
+      this.orders = rest.data;
+      console.log(rest.data);
+      this.dataSource = this.orders;
+    });
   }
 
   ngNextForm(){

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { CampusService } from 'src/app/service/campus.service';
 
 @Component({
   selector: 'app-campus',
@@ -13,7 +14,7 @@ export class CampusComponent {
   }
 
   ngOnInit() {
-    
+
   }
 
   ngNextForm(){

@@ -20,6 +20,10 @@ import { OrderSummaryComponent } from './views/order/order-summary.component';
 import { MatNativeDateModule } from '@angular/material/core';
 import { BookingDetailComponent } from './views/booking/booking-detail/booking-detail.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { CampusService } from './service/campus.service';
+import { OrderService } from './service/order.service';
+import { HttpClientModule } from '@angular/common/http';
+//import { NgxSoapModule } from 'ngx-soap';
 
 @NgModule({
   declarations: [
@@ -46,8 +50,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     ReactiveFormsModule,
     MatNativeDateModule,
     MatFormFieldModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [CampusService, OrderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
