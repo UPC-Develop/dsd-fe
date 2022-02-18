@@ -1,3 +1,4 @@
+import { formatDate } from '@angular/common';
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -13,10 +14,21 @@ export class BookingComponent {
 
   selected!: Date;
 
+  
+
   constructor(public router: Router, public dialog: MatDialog) {
   }
 
   openDialog(): void {
+
+    
+    localStorage.setItem('campus_id', '1');
+    localStorage.setItem('product_id', '1');
+    localStorage.setItem('booking_date', this.selected.toDateString());
+    localStorage.setItem('status', 'Cancelado');
+    localStorage.setItem('active', '1');
+
+
     const dialogRef = this.dialog.open(BookingDetailComponent, {
       width: '600px',
       data: {name: this.selected/*, animal: this.animal*/},

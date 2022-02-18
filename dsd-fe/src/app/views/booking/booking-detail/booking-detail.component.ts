@@ -1,7 +1,10 @@
+import { formatDate } from '@angular/common';
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { BoockingDetails } from 'src/app/model/bookingDetail';
+import { OrderDetail } from 'src/app/model/order-details';
+import { OrderService } from 'src/app/service/order.service';
 
 @Component({
   selector: 'app-booking-detail',
@@ -10,25 +13,55 @@ import { BoockingDetails } from 'src/app/model/bookingDetail';
 })
 export class BookingDetailComponent {
 
-  boockingDetails: BoockingDetails[] = [{ bookingDetailId: 1, starDdate: "30/10/2022", endDdate: "30/10/2022", startHour: "9:00", endHour: "10:00" },
-  { bookingDetailId: 2, starDdate: "30/10/2022", endDdate: "30/10/2022", startHour: "10:00", endHour: "11:00" },
-  { bookingDetailId: 3, starDdate: "30/10/2022", endDdate: "30/10/2022", startHour: "12:00", endHour: "13:00" },
-  { bookingDetailId: 4, starDdate: "30/10/2022", endDdate: "30/10/2022", startHour: "14:00", endHour: "15:00" },
-  { bookingDetailId: 5, starDdate: "30/10/2022", endDdate: "30/10/2022", startHour: "16:00", endHour: "17:00" },
-  { bookingDetailId: 6, starDdate: "30/10/2022", endDdate: "30/10/2022", startHour: "18:00", endHour: "19:00" }];
+  displayedColumns: string[] = ["start_hour", "end_hour", "bflag"];
 
-  displayedColumns: string[] = ['bookingDetailId', "startHour", "endHour"];
-  dataSource = this.boockingDetails;
+  orderDetails: OrderDetail[] = [];
 
-  clickedRows = new Set<BoockingDetails>();
+  campus_id!: number;
+  product_id!: number;
+  booking_date!: Date;
+  booking_datePass!: string;
+  status!: string;
+  active: number = 1;
 
-  constructor(
-    public dialogRef: MatDialogRef<BookingDetailComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: BoockingDetails,
-  ) { }
+  dataSource: any;
+
+
+  clickedRows = new Set<OrderDetail>();
+
+  constructor(public dialogRef: MatDialogRef<BookingDetailComponent>,
+    @Inject(MAT_DIALOG_DATA) public orderDetail: OrderDetail, private orderService: OrderService) { }
 
   onNoClick(): void {
     this.dialogRef.close();
+  }
+
+  ngOnInit() {
+
+    this.campus_id = Number.parseInt(localStorage.getItem('campus_id') || '0');
+    this.product_id = Number.parseInt(localStorage.getItem('campus_id') || '0');
+
+    this.booking_datePass = localStorage.getItem('booking_date')?.toString() || new Date().toString()
+
+    this.booking_date = new Date(this.booking_datePass) || new Date();
+
+    this.status = localStorage.getItem('campus_id') || 'Cancelado';
+
+    this.active = Number.parseInt(localStorage.getItem('campus_id') || '1');
+
+    console.info(this.campus_id)
+    console.info(this.product_id)
+    console.info(this.booking_datePass)
+    console.info(this.booking_date)
+    console.info(this.status)
+    console.info(this.active)
+
+
+    this.orderService.getBookingOrders(this.campus_id , this.product_id, this.booking_date, this.status, this.active).subscribe((rest: any) => {
+      this.orderDetails = rest.data;
+      console.log(rest.data);
+      this.dataSource = this.orderDetails;
+    });
   }
 
 

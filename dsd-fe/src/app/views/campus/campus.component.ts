@@ -9,15 +9,25 @@ import { CampusService } from 'src/app/service/campus.service';
 })
 export class CampusComponent {
 
-  constructor(public router: Router) {
+  campus: any = [];
+  campus_id: any;
+
+  constructor(public router: Router, private campusService: CampusService) {
 
   }
 
   ngOnInit() {
 
+    this.campusService.getCampus().subscribe((rest: any) => {
+      this.campus = rest.data;
+      console.log(rest.data);
+    });
+
   }
 
   ngNextForm(){
+
+    console.info(document.getElementById('myDOMElement'));
     this.router.navigate(['home/product']);
   }
 

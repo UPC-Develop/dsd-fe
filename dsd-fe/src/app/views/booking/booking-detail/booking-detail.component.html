@@ -3,20 +3,18 @@
 </div>
 <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center center">
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
-
-    <ng-container matColumnDef="bookingDetailId">
-      <th mat-header-cell *matHeaderCellDef>Id</th>
-      <td mat-cell *matCellDef="let element">{{element.bookingDetailId}}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="startHour">
+    <ng-container matColumnDef="start_hour">
       <th mat-header-cell *matHeaderCellDef>Hora Inicio</th>
-      <td mat-cell *matCellDef="let element">{{element.startHour}}</td>
+      <td mat-cell *matCellDef="let element">{{element.start_hour | date: 'shortTime'}}</td>
     </ng-container>
 
-    <ng-container matColumnDef="endHour">
+    <ng-container matColumnDef="end_hour">
       <th mat-header-cell *matHeaderCellDef>Hora Fin</th>
-      <td mat-cell *matCellDef="let element">{{element.endHour}}</td>
+      <td mat-cell *matCellDef="let element">{{element.end_hour | date: 'shortTime'}}</td>
+    </ng-container>
+    <ng-container matColumnDef="bflag">
+      <th mat-header-cell *matHeaderCellDef>Estado</th>
+      <td mat-cell *matCellDef="let element">{{element.bflag}}</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -28,5 +26,5 @@
 
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">Cancelar</button>
-  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Aceptar</button>
+  <button mat-button [mat-dialog-close]="orderDetail" cdkFocusInitial>Aceptar</button>
 </div>
